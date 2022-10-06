@@ -17,11 +17,18 @@ public class NovaEmpresaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Cadastrando nova empresa:");
+		
 		//acessando o parametro da requisiçao
 		String nomeEmpresa = request.getParameter("nome");
-		PrintWriter out = response.getWriter();
+		Company company = new Company();
+		company.setName(nomeEmpresa);
+		
+		Bank bank = new Bank();
+		bank.addCompany(company);
+		
+		PrintWriter out = response.getWriter();		
 		out.println("<html><body>Empresa " + nomeEmpresa + " cadastrada com sucesso!</body></html>");
 	}
 }
