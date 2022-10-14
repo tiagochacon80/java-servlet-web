@@ -1,4 +1,4 @@
-package br.com.alura.gerenciado.servlet;
+package br.com.alura.gerenciador.servlet;
 
 public class Company {
 
