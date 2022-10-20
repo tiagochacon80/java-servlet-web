@@ -43,4 +43,13 @@ public class Bank {
 			}
 		}		
 	}
+
+	public Company searchCompanyId(Integer id) {
+		for (Company company : list) {
+			if (company.getId() == id) {
+				return company;
+			}
+		}
+		return null;
+	}
 }
