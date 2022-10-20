@@ -12,6 +12,7 @@
 	<form action="/gerenciador/newCompany" method="post">
 	
 		Name: <input type="text" name="name"/>
+		Opening date: <input type="text" name="date"/>
 		
 		<input type="submit"/>
 	
