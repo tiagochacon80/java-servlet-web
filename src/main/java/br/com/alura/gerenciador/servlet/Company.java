@@ -8,10 +8,10 @@ public class Company {
 	private String name;
 	private Date openingDate = new Date();
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -25,6 +25,5 @@ public class Company {
 	}
 	public void setOpeningDate(Date openingDate) {
 		this.openingDate = openingDate;
-	}		
-	
+	}	
 }

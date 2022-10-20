@@ -15,7 +15,10 @@
 	
 	<ul>
 		<c:forEach items="${companys}" var="company">
-			<li>${company.name } - <fmt:formatDate value ="${company.openingDate}" pattern="yyyy/MM/dd"/> </li>
+			<li>
+				${company.name} - <fmt:formatDate value="${company.openingDate}" pattern="yyyy/MM/dd" /> 
+				<a href="/gerenciador/deleteCompany?id=${company.id}">delete</a>
+			</li>
 		</c:forEach>
 	</ul>	
 	

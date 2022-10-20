@@ -44,6 +44,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		
 		request.setAttribute("company", company.getName());
 		
+		//redirecionando pelo navegador
 		response.sendRedirect("listCompany");
 		
 		//Call the JPS
