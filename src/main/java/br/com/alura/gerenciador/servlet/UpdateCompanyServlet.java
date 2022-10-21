@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alura.gerenciador.modelo.Bank;
+import br.com.alura.gerenciador.modelo.Company;
+
 
 @WebServlet("/updateCompany")
 public class UpdateCompanyServlet extends HttpServlet {
