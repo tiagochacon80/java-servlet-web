@@ -2,6 +2,7 @@ package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,13 +25,14 @@ public class SingleEntryServlet extends HttpServlet {
 		
 		String paramAction = request.getParameter("action");
 		
+		String name = null;
 		if (paramAction.equals("listCompany")) {			
 			ListCompany action = new ListCompany();
-			action.execute(request, response);			
+			name = action.execute(request, response);			
 		} else if (paramAction.equals("Deletecompany")) {
 			System.out.println("removing company");			
 			DeleteCompany action = new DeleteCompany();
-			action.executes(request, response);			
+			name = action.executes(request, response);			
 		} else if (paramAction.equals("Showcompany")) {
 			ShowCompany action = new ShowCompany();
 			action.executes(request, response);		
@@ -40,6 +42,14 @@ public class SingleEntryServlet extends HttpServlet {
 		} else if (paramAction.equals("NewCompany")) {
 			NewCompany action = new NewCompany();
 			action.executes(request, response);
+		}
+		
+		String[] addressType = name.split(":");
+		if (addressType[0].equals("forward")) {
+			RequestDispatcher rd = request.getRequestDispatcher(addressType[1]);
+			rd.forward(request, response);
+		} else {
+			response.sendRedirect(addressType[1]);
 		}
 	}
 }
