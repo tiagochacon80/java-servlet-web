@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.action.DeleteCompany;
 import br.com.alura.gerenciador.action.ListCompany;
+import br.com.alura.gerenciador.action.ShowCompany;
 
 
 @WebServlet("/entry")
@@ -33,7 +34,8 @@ public class SingleEntryServlet extends HttpServlet {
 			action.executes(request, response);
 			
 		} else if (paramAction.equals("Show company")) {
-			System.out.println("Showing company data");
+			ShowCompany action = new ShowCompany();
+			action.executes(request, response);
 		}		
 	}
 }
