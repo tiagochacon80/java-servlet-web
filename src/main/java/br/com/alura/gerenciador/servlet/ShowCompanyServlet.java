@@ -13,7 +13,7 @@ import br.com.alura.gerenciador.modelo.Bank;
 import br.com.alura.gerenciador.modelo.Company;
 
 
-@WebServlet("/showCompany")
+//@WebServlet("/showCompany")
 public class ShowCompanyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -20,7 +20,7 @@ public class DeleteCompany {
 		Bank bank = new Bank();
 		bank.removeCompany(id);	
 		
-		response.sendRedirect("ListCompany");
+		response.sendRedirect("entry?action=ListCompany");
 	}	
 }
 

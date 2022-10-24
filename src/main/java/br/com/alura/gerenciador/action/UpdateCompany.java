@@ -1,4 +1,4 @@
-package br.com.alura.gerenciador.servlet;
+package br.com.alura.gerenciador.action;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -6,45 +6,39 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.modelo.Bank;
 import br.com.alura.gerenciador.modelo.Company;
 
-
-//@WebServlet("/updateCompany")
-public class UpdateCompanyServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
+public class UpdateCompany {
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("Updating a new company");
-		
+	public void executes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+				
 		String nameCompany = request.getParameter("name");
-		String dateOpeningCompany = request.getParameter("date");
+		String paramDateCompany = request.getParameter("date");
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 		
+		System.out.println("Updating a new company " + id);
+		
 		Date openingDate = null;
 		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-			openingDate = sdf.parse(dateOpeningCompany);
-		} 
-		catch (ParseException e){
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			openingDate = sdf.parse(paramDateCompany);
+		} catch (ParseException e) {
 			throw new ServletException(e);
 		}
 		
 		System.out.println(id);
 		
-		Bank bank = new Bank();
+		Bank bank = new Bank();	
 		Company company = bank.searchCompanyId(id);
 		company.setName(nameCompany);
 		company.setOpeningDate(openingDate);
 		
-		response.sendRedirect("listCompany");
-		
+		response.sendRedirect("entry?action=ListCompany");
+	
 	}
 }

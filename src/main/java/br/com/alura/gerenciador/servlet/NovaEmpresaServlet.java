@@ -1,6 +1,7 @@
 package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.modelo.Bank;
 import br.com.alura.gerenciador.modelo.Company;
-@WebServlet("/newCompany")
+
+//@WebServlet("/newCompany")
 public class NovaEmpresaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
