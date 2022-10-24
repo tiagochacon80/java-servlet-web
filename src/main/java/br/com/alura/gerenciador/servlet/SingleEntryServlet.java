@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alura.gerenciador.action.DeleteCompany;
 import br.com.alura.gerenciador.action.ListCompany;
 
 
@@ -27,6 +28,10 @@ public class SingleEntryServlet extends HttpServlet {
 			
 		} else if (paramAction.equals("Delete company")) {
 			System.out.println("removing company");
+			
+			DeleteCompany action = new DeleteCompany();
+			action.executes(request, response);
+			
 		} else if (paramAction.equals("Show company")) {
 			System.out.println("Showing company data");
 		}		
