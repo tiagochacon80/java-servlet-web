@@ -25,7 +25,7 @@ public class UpdateCompany {
 		
 		Date openingDate = null;
 		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
 			openingDate = sdf.parse(paramDateCompany);
 		} catch (ParseException e) {
 			throw new ServletException(e);
