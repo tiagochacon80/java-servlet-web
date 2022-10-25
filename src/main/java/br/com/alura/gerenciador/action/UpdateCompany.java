@@ -14,7 +14,7 @@ import br.com.alura.gerenciador.modelo.Company;
 
 public class UpdateCompany {
 	
-	public void executes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	public String executes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 				
 		String nameCompany = request.getParameter("name");
 		String paramDateCompany = request.getParameter("date");
@@ -38,7 +38,7 @@ public class UpdateCompany {
 		company.setName(nameCompany);
 		company.setOpeningDate(openingDate);
 		
-		response.sendRedirect("entry?action=ListCompany");
+		return "redirect:entry?action=ListCompany";
 	
 	}
 }

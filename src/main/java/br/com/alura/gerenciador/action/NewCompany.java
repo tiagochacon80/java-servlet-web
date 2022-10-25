@@ -14,7 +14,7 @@ import br.com.alura.gerenciador.modelo.Company;
 
 public class NewCompany {
 	
-	public void executes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	public String executes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 			
 		System.out.println("New company registration:");		
 		
@@ -38,7 +38,7 @@ public class NewCompany {
 		
 		request.setAttribute("company", company.getName());		
 		
-		response.sendRedirect("entry?action=ListaCompany");
+		return "redirect:entry?action=ListaCompany";
 		
 	}
 

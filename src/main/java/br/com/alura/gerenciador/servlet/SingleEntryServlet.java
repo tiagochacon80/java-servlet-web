@@ -26,22 +26,22 @@ public class SingleEntryServlet extends HttpServlet {
 		String paramAction = request.getParameter("action");
 		
 		String name = null;
-		if (paramAction.equals("listCompany")) {			
+		if (paramAction.equals("ListCompany")) {			
 			ListCompany action = new ListCompany();
 			name = action.execute(request, response);			
-		} else if (paramAction.equals("Deletecompany")) {
+		} else if (paramAction.equals("DeleteCompany")) {
 			System.out.println("removing company");			
 			DeleteCompany action = new DeleteCompany();
 			name = action.executes(request, response);			
-		} else if (paramAction.equals("Showcompany")) {
+		} else if (paramAction.equals("ShowCompany")) {
 			ShowCompany action = new ShowCompany();
-			action.executes(request, response);		
+			name = action.executes(request, response);		
 		} else if (paramAction.equals("UpdateCompany")) {
 			UpdateCompany action = new UpdateCompany();
-			action.executes(request, response);		
+			name = action.executes(request, response);		
 		} else if (paramAction.equals("NewCompany")) {
 			NewCompany action = new NewCompany();
-			action.executes(request, response);
+			name = action.executes(request, response);
 		}
 		
 		String[] addressType = name.split(":");
