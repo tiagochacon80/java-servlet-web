@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.modelo.Bank;
 import br.com.alura.gerenciador.modelo.Company;
 
-public class UpdateCompany {
+public class UpdateCompany implements Action {
 	
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 				

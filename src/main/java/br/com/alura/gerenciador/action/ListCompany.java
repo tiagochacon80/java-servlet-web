@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.modelo.Bank;
 import br.com.alura.gerenciador.modelo.Company;
 
-public class ListCompany {
+public class ListCompany implements Action {
 	
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -21,6 +21,6 @@ public class ListCompany {
 		
 		request.setAttribute("company", list);			
 		
-		return "forward:listCompany.jsp";		
+		return "forward:formUpdateCompany.jsp";		
 	}
 }
