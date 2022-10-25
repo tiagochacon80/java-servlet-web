@@ -12,7 +12,7 @@ import br.com.alura.gerenciador.modelo.Company;
 
 public class ShowCompany {
 	
-	public String executes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
@@ -25,6 +25,6 @@ public class ShowCompany {
 		
 		request.setAttribute("company", company);
 		
-		return "forward:/formUpdateCompany.jsp";		
+		return "forward:formUpdateCompany.jsp";		
 	}
 }

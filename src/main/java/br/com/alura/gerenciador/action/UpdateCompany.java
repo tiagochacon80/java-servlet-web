@@ -14,7 +14,7 @@ import br.com.alura.gerenciador.modelo.Company;
 
 public class UpdateCompany {
 	
-	public String executes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 				
 		String nameCompany = request.getParameter("name");
 		String paramDateCompany = request.getParameter("date");

@@ -10,7 +10,7 @@ import br.com.alura.gerenciador.modelo.Bank;
 
 public class DeleteCompany {
 	
-	public String executes(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 		
 		System.out.println("Removing company");
 		

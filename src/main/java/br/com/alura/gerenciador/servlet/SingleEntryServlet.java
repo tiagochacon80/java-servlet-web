@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.action.DeleteCompany;
 import br.com.alura.gerenciador.action.ListCompany;
 import br.com.alura.gerenciador.action.NewCompany;
+import br.com.alura.gerenciador.action.NewCompanyForm;
 import br.com.alura.gerenciador.action.ShowCompany;
 import br.com.alura.gerenciador.action.UpdateCompany;
 
@@ -32,21 +33,24 @@ public class SingleEntryServlet extends HttpServlet {
 		} else if (paramAction.equals("DeleteCompany")) {
 			System.out.println("removing company");			
 			DeleteCompany action = new DeleteCompany();
-			name = action.executes(request, response);			
+			name = action.execute(request, response);			
 		} else if (paramAction.equals("ShowCompany")) {
 			ShowCompany action = new ShowCompany();
-			name = action.executes(request, response);		
+			name = action.execute(request, response);		
 		} else if (paramAction.equals("UpdateCompany")) {
 			UpdateCompany action = new UpdateCompany();
-			name = action.executes(request, response);		
+			name = action.execute(request, response);		
 		} else if (paramAction.equals("NewCompany")) {
 			NewCompany action = new NewCompany();
+			name = action.execute(request, response);
+		} else if (paramAction.equals("NewCompanyForm")) {
+			NewCompanyForm action = new NewCompanyForm();
 			name = action.executes(request, response);
 		}
 		
 		String[] addressType = name.split(":");
 		if (addressType[0].equals("forward")) {
-			RequestDispatcher rd = request.getRequestDispatcher(addressType[1]);
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/view/" + addressType[1]);
 			rd.forward(request, response);
 		} else {
 			response.sendRedirect(addressType[1]);
