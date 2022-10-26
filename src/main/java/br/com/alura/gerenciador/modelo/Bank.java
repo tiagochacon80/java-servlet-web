@@ -59,4 +59,13 @@ public class Bank {
 		}
 		return null;
 	}
+	
+	public User userExist(String login, String password) {
+		for (User user : listUser) {
+			if (user.isEgual(login, password)) {
+				return user;
+			}
+		}
+		return null;		
+	}
 }

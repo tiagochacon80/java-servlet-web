@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alura.gerenciador.modelo.Bank;
+import br.com.alura.gerenciador.modelo.User;
+
 public class Login implements Action {
 
 	@Override
@@ -17,6 +20,14 @@ public class Login implements Action {
 		
 		System.out.println("Login" + login);
 		
-		return "redirect:entry?action=ListCompany";
+		Bank bank = new Bank();
+		User user = new bank.userExist(login, password);
+		
+		if (user != null) {
+			System.out.println("User exist!");
+			return "redirect:entry?action=ListCompany";
+		} else {
+			return "redirect:entry?action=LoginForm";
+		}		
 	}
 }
