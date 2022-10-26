@@ -7,6 +7,7 @@ import java.util.List;
 public class Bank {
 	
 	private static List<Company> list = new ArrayList<>();
+	private static List<User> listUser = new ArrayList<>(); 
 	private static Integer sequentialKey = 1;
 	
 	static {
@@ -20,6 +21,12 @@ public class Bank {
 		
 		list.add(company);
 		list.add(company2);
+		
+		User u1 = new User("Nico", "1234");
+		User u2 = new User("Ana", "1234");
+		
+		listUser.add(u1);
+		listUser.add(u2);
 	}
 
 	public void addCompany(Company company) {
