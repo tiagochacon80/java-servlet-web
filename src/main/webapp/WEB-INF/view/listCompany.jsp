@@ -11,6 +11,17 @@
 <title>Java Standard taglib</title>
 </head>
 <body>
+
+	User is connected: ${userIsConnected.login}
+	
+	<br>
+	<br>
+	<br>	
+	
+	<c:if test="${not empty company}">
+		company ${company} successfully registered company!
+	</c:if>
+	
 	Company names: <br />
 	
 	<ul>

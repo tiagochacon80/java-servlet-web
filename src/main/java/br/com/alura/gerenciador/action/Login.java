@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.alura.gerenciador.modelo.Bank;
 import br.com.alura.gerenciador.modelo.User;
@@ -25,6 +26,8 @@ public class Login implements Action {
 		
 		if (user != null) {
 			System.out.println("User exist!");
+			HttpSession session = request.getSession();
+			session.setAttribute("User is connected", user);
 			return "redirect:entry?action=ListCompany";
 		} else {
 			return "redirect:entry?action=LoginForm";
