@@ -27,7 +27,7 @@ public class Login implements Action {
 		if (user != null) {
 			System.out.println("User exist!");
 			HttpSession session = request.getSession();
-			session.setAttribute("User is connected", user);
+			session.setAttribute("userIsConnected", user);
 			return "redirect:entry?action=ListCompany";
 		} else {
 			return "redirect:entry?action=LoginForm";
