@@ -9,6 +9,8 @@
 </head>
 <body>
 
+	<c:import url="Logout-partial.jsp" />
+
 	<form action="${linkEntryServlet}" method="post">
 	
 		Name: <input type="text" name="name"/>

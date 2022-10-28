@@ -12,6 +12,13 @@
 </head>
 <body>
 
+	<c:import url="Logout-partial.jsp" />
+
+	<a href="entry?action=Logout">disconnect</a>
+	<br>
+	<br>
+	<br>
+
 	User is connected: ${userIsConnected.login}
 	
 	<br>

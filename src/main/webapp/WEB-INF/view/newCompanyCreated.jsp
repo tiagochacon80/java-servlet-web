@@ -2,6 +2,8 @@
 
 <html>
 	<body>
+	
+		<c:import url="Logout-partial.jsp" />
 		
 		<c:if test="${not empty company }">		
 			Company ${ company } successfully registered! 

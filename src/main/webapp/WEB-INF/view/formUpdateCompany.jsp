@@ -11,6 +11,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
+	<c:import url="Logout-partial.jsp" />
 
 	<form action="${linkEntryServlet}" method="post">
 	
